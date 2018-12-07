@@ -4,7 +4,7 @@
 	templated.co @templatedco
 	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
 -->
-<html>
+<html ng-app='calendarApp' ng-cloak='true'>
 <head>
 	<title>DB종합병원</title>
 	<meta charset="utf-8" />
@@ -19,8 +19,8 @@
 				<a href="index.html" class="logo"><strong>DB종합병원</strong></a>
 				<nav id="nav">
 					<a href="index.html">Home</a>
-					<a href="generic.html">차트조회</a>
-					<a href="elements.html">예약확인</a>
+					<a href="chartsearching.html">차트조회</a>
+					<a href="reservation.html">예약확인</a>
 				</nav>
 				<a href="#navPanel" class="navPanelToggle"><span class="fa fa-bars"></span></a>
 			</div>
@@ -28,77 +28,44 @@
 
 		<link href="https://fonts.googleapis.com/css?family=Baloo|Ubuntu" rel="stylesheet">
 
-		<div id="calender-wrapper">
-			<div id="calender-title" class="disable-select flex row center-v around">
-				<div id="left" class="flex row center-vh"><span><</span></div>
-				<p class="flex row center-vh"></p>
-				<div id="right" class="flex row center-vh"><span>></span></div>
-			</div>
-			<div id="days" class="flex row center-vh colorRed disable-select">
-				<p>MON</p>
-				<p>TUE</p>
-				<p>WEDS</p>
-				<p>THURS</p>
-				<p>FRI</p>
-				<p>SAT</p>
-				<p>SUN</p>
-			</div>
-			<div id="calender-content" class="flex row wrap disable-select">
-			</div>
-			<div id="booking-wrapper" class="flex column center-vh">
-				<div id="booking-title" class="flex row center-vh bgColorRed">
-					<p class="flex row center-vh">DETAILS OF YOUR ENQUIRY</p>
-				</div>
-				<div id="booking-form" class="flex column center-v">
-					<div class="flex column start width-full">
-						<p>Your Name*</p>
-						<input id="form-name" class="width-full" type="text" placeholder=""/>
-					</div>
-					<div class="flex column start width-full">
-						<p>Your Email*</p>
-						<input id="form-email" class="width-full" type="email" placeholder=""/>
-					</div>
-					<div class="flex row center-vh width-full overflow-hidden">
-						<div class="flex column start width-3-4">
-							<p>Your Number*</p>
-							<input id="form-number" class="width-full" type="text" placeholder=""/>
-						</div>
-						<div class="flex column start width-1-4">
-							<p>Number of Guests*</p>
-							<input id="form-guests" class="width-full" type="number" max="10" placeholder=""/>
-						</div>
-					</div>
-					<div class="flex column start width-full">
-						<p>Enquiry Information</p>
-						<textarea id="form-enquiry" type="text"></textarea>
-					</div>
-					<div class="flex column center-vh width-full">
-						<p><i>*Required field</i></p>
-					</div>
-				</div>
-			</div>
-			<div id="calender-panel" class="flex row center-v end">
-				<div id="info" class="flex column center-vh bgColorDarkRed">
-					<div id="info-titles" class="flex row center-vh">
-						<p class="flex column center-vh">Start Date</p>
-						<p class="flex column center-vh">End Date</p>
-					</div>
-					<div class="flex row center-vh bgColorRed">
-						<p class="flex column center-vh" id="startdate"></p>
-						<p class="flex column center-vh" id="enddate"></p>
-					</div>
-				</div>
-				<div id="clear" class="flex column center-vh bgColorDarkRed">
-					<p>CLEAR SELECTION</p>
-				</div>
-			</div>
+		<div class='calendar' ng-controller='calendarController as calendar'>
+		  <div class='calendar_left'>
+		    <div class='header'>
+		      <i class='material-icons' ng-click='calendar.prev()'>navigate_before</i>
+		      <h1>{{calendar.month}}</h1>
+		      <i class='material-icons' ng-click='calendar.next()'>navigate_next</i>
+		    </div>
+		    <div class='days'>
+		      <div class='day_item'>Mon</div>
+		      <div class='day_item'>Tue</div>
+		      <div class='day_item'>Wed</div>
+		      <div class='day_item'>Thu</div>
+		      <div class='day_item'>Fri</div>
+		      <div class='day_item'>Sat</div>
+		      <div class='day_item'>Sun</div>
+		    </div>
+		    <div class='dates'></div>
+		  </div>
+		  <div class='calendar_right'>
+		    <div class='list'>
+		      <ul>
+		        <li class='bounce-in' ng-repeat='events in calendar.events' ng-show='events.id === calendar.dataId'>
+		          <span class='type'>It's a {{ events.type }} thing -</span>
+		          <span class='description'>{{ events.description }}</span>
+		        </li>
+		      </ul>
+		    </div>
+		    <form ng-submit='calendar.add()'>
+		      <input ng-model='calendar.description' placeholder='Enter a task for this day' type='text'>
+		      <select ng-model='calendar.type' placeholder='calendar.type'>
+		          <option value='Social'>Social</option>
+		          <option value='Work'>Work</option>
+		        </select>
+		      </input>
+		    </form>
+		  </div>
 		</div>
 
-		<div id="calender-buttons" class="flex row center-vh wrap">
-			<div id="make-booking" class="flex column center-vh">
-				<p>MAKE BOOKING ENQUIRY</p>
-			</div>
-		</div>
 
 
 		<!-- Main -->
@@ -586,6 +553,7 @@ print 'It took ' + i + ' iterations to sort the deck.';
 			<script src="assets/js/skel.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			<script src="assets/js/calender.js"></script>
 
 	</body>
 </html>
