@@ -3525,3 +3525,11 @@ body {
   text-align: center;
   font-size: 12px;
 }
+
+/* ------------chartform------------------------------- */
+#chartform {
+	position : absolute;
+	left: 300px;
+
+	}
+}
