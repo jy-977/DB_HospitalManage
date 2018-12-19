@@ -1,5 +1,6 @@
 package com.example.DB;
 
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -14,18 +15,16 @@ import lombok.ToString;
 @Setter
 @Entity
 @ToString
-public class Patient {
+public class Doctors {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private long pat_id;
-	@Column(name="pat_name")
+	private long doc_id;
+	@Column(name="major_treat")
+	private String major;
+	@Column(name="doc_name")
 	private String name;
-	private String pat_gen;
-	@Column(name="pat_jumin")
-	private long jumin;
-	private String pat_addr;
-	private String pat_phone;
-	private String pat_email;
-	private String pat_job;
-
+	private String doc_gen;
+	private String doc_phone;
+	private String doc_email;
+	private String doc_position;
 }

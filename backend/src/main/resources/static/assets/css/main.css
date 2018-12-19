@@ -3162,118 +3162,7 @@
 
 		}
 
-
-@keyframes shake {
-   0%, 100% {transform: translateX(0);}
-   10%, 30%, 50%, 70% {transform: translateX(-5px);}
-   20%, 40%, 60%, 80% {transform: translateX(5px);}
-}
-
-
-@mixin center {
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  margin: auto;
-}
-
-* {
-  box-sizing: border-box;
-}
-
-body {
-  background: $light-grey;
-  font-family: sans-serif;
-  color: #333;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-.container {
-  @include center;
-  width: 500px;
-  height: 320px;
-  background: $grey;
-  padding: 1em;
-  border: 1px solid $dark-grey;
-  box-shadow: 0 1px 2px rgba(0,0,0,0.05), 0 5px 10px rgba(0,0,0,0.05);;
-  border-radius: 3px2
-  overflow: hidden;
-}
-
-.input-query {
-  width: 100%;
-  padding: 0.5em;
-  border: 1px solid $dark-grey;
-  border-radius: 3px;
-  font-size: 1em;
-
-  &:focus ~ .counter {
-    opacity: 0.1;
-    transition: opacity 1s ease-in;
-  }
-}
-
-.list-wrap {
-  margin-top: 0.4em;
-  overflow-y: auto;
-  overflow-x: hidden;
-}
-
-.list {
-  max-height: 220px;
-}
-
-.list-item {
-  font-size: 0.9em;
-  padding: 0.5em 0.8em;
-  border-bottom: 1px solid $dark-grey;
-  border-top: 1px solid white;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  word-wrap: normal;
-  max-width: 100%;
-
-  &:first-child {
-    border-top: none;
-  }
-
-  &:last-child {
-    border-bottom: none;
-  }
-}
-
-.list-item-link {
-  color: #444;
-  text-decoration: none;
-}
-
-.item-list-subtext {
-  font-size: 85%;
-  color: grey;
-  &:before { content: ' ('}
-  &:after { content: ')'}
-}
-
-.list-item--disable {
-  text-align: center;
-  border-bottom: none;
-  animation: shake 0.6s;
-  color: #9da1b1;
-}
-
-.counter {
-  position: absolute;
-  bottom: -15px;
-  right: 10px;
-  z-index: 0;
-  font-size: 3.5em;
-  color: black;
-  transform: translateY(0);
-  opacity: 0;
-}
-
-/*calender*/
+/*canlender */
 
 * {
   margin: 0;
@@ -3284,7 +3173,7 @@ body {
 
 html,
 body {
-/*  background: #2A324B;*/
+  background: #ffffff;
 }
 
 .calendar {
@@ -3304,9 +3193,9 @@ body {
 }
 
 .calendar_left {
-  background: #8dcca9;
+  background: #7ec89e;
   width: 500px;
-  height: 515px;
+  height: 415px;
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
   padding: 1.5em;
@@ -3323,7 +3212,7 @@ body {
   justify-content: space-around;
   margin-bottom: 2em;
   color: #FFF;
-  font-size: 1.0em;
+  font-size: 0.7em;
 }
 
 .calendar_left .header h1 {
@@ -3335,9 +3224,9 @@ body {
 }
 
 .calendar_right {
-  background: #6eac8d;
-  width: 450px;
-  height: 480px;
+  background: #5ab884;
+  width: 350px;
+  height: 415px;
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
   position: relative;
@@ -3365,7 +3254,7 @@ body {
 }
 
 .calendar_right .list .description {
-  font-size: 15px;
+  font-size: 12px;
 }
 
 .calendar_right form {
@@ -3383,7 +3272,7 @@ body {
 }
 
 .calendar_right input {
-  background: #008ec4;
+  background: #4bae77;
   border: none;
   padding: 1.2em;
   -webkit-box-flex: 2;
@@ -3396,7 +3285,7 @@ body {
 }
 
 .calendar_right select {
-  background: #007fb0;
+  background: #48a973;
   border: none;
   padding: 1.2em;
   outline: none;
@@ -3419,15 +3308,14 @@ body {
   -webkit-justify-content: flex-start;
   -ms-flex-pack: start;
   justify-content: flex-start;
-  width: 450px;
+  width: 500px;
 }
 
 .days .day_item {
   color: #FFF;
-  width: 100px;
+  width: 65px;
   text-align: center;
   padding-bottom: 1em;
-	font-size: 1.5em;
 }
 
 .dates {
@@ -3442,7 +3330,7 @@ body {
   -webkit-flex-flow: row wrap;
   -ms-flex-flow: row wrap;
   flex-flow: row wrap;
-  width: 350px;
+  width: 450px;
 }
 
 .dates .date_item {
@@ -3536,4 +3424,112 @@ body {
     -webkit-transform: translateZ(0) scale(0.7);
     transform: translateZ(0) scale(0.7);
   }
+}
+
+
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,100);
+
+
+.login-card {
+  padding: 40px;
+  width: 274px;
+  background-color: #F7F7F7;
+  margin: 0 auto 10px;
+  border-radius: 2px;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+}
+
+.login-card h1 {
+  font-weight: 100;
+	color: #777;
+  text-align: center;
+  font-size: 2.3em;
+}
+
+.login-card input[type=submit] {
+  width: 100%;
+  display: block;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.login-card input[type=text], input[type=password] {
+  height: 44px;
+  font-size: 16px;
+  width: 100%;
+  margin-bottom: 10px;
+  -webkit-appearance: none;
+  background: #fff;
+  border: 1px solid #d9d9d9;
+  border-top: 1px solid #c0c0c0;
+  /* border-radius: 2px; */
+  padding: 0 8px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
+.login-card input[type=text]:hover, input[type=password]:hover {
+  border: 1px solid #b9b9b9;
+  border-top: 1px solid #a0a0a0;
+  -moz-box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
+  -webkit-box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
+  box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
+}
+
+.login {
+  text-align: center;
+  font-size: 14px;
+  font-family: 'Arial', sans-serif;
+  font-weight: 700;
+  height: 36px;
+  padding: 0 8px;
+/* border-radius: 3px; */
+/* -webkit-user-select: none;
+  user-select: none; */
+}
+
+.login-submit {
+  /* border: 1px solid #3079ed; */
+  border: 0px;
+  color: #fff;
+  text-shadow: 0 1px rgba(0,0,0,0.1);
+  background-color: #4d90fe;
+  /* background-image: -webkit-gradient(linear, 0 0, 0 100%,   from(#4d90fe), to(#4787ed)); */
+}
+
+.login-submit:hover {
+  /* border: 1px solid #2f5bb7; */
+  border: 0px;
+  text-shadow: 0 1px rgba(0,0,0,0.3);
+  background-color: #357ae8;
+  /* background-image: -webkit-gradient(linear, 0 0, 0 100%,   from(#4d90fe), to(#357ae8)); */
+}
+
+.login-card a {
+  text-decoration: none;
+  color: #666;
+  font-weight: 400;
+  text-align: center;
+  display: inline-block;
+  opacity: 0.6;
+  transition: opacity ease 0.5s;
+}
+
+.login-card a:hover {
+  opacity: 1;
+}
+
+.login-help {
+  width: 100%;
+  text-align: center;
+  font-size: 12px;
+}
+
+/* ------------chartform------------------------------- */
+#chartform {
+	position : absolute;
+	left: 300px;
+
+	}
 }

@@ -75,7 +75,7 @@ public class ChartTableCTRL implements TableCTRL{
 					"nur_id number not null, " +
 					"chart_contents varchar2(100) not null, " +
 					
-					"primary key(chart_id, treat_id, doc_id, pat_id), " + 
+					"primary key(chart_id), " + 
 					"foreign key(treat_id, doc_id, pat_id) references treatments(treat_id, doc_id, pat_id), " + 
 					"foreign key(nur_id) references nurse(nur_id)" + 
 					")";

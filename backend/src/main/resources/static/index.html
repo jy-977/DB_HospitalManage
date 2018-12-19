@@ -10,6 +10,10 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+        <style>
+            @import url(//fonts.googleapis.com/earlyaccess/nanumgothic.css);
+        </style>
+	 <link rel="stylesheet" href="asset/css/chartPopup.css"/>
 	</head>
 	<body>
 
@@ -18,9 +22,9 @@
 				<div class="inner">
 					<a href="index.html" class="logo"><strong>DB종합병원</strong></a>
 					<nav id="nav">
-						<a href="index.html">Home</a>
+						<a href="/logout">Log Out</a>
 						<a href="chartsearching.html">차트조회</a>
-						<a href="reservation.html">예약확인</a>
+						<a href="calendar.html">예약확인</a>
 					</nav>
 					<a href="#navPanel" class="navPanelToggle"><span class="fa fa-bars"></span></a>
 				</div>
@@ -30,27 +34,27 @@
 			<section id="banner">
 				<div class="inner">
 					<header>
-						<h1>DB병원은 양질의 치료를 최우선합니다<br></h1>
+						<h1 style="font-family:Nanum Gothic">사랑으로 환자를 돌보는 대구 DB병원</h1>
 					</header>
 
 					<div class="flex ">
 
 						<div>
-							<span class="icon fa-car"></span>
+							<span class="icon fa-user-md"></span>
 							<h3>암 전문 센터</h3>
-							<p>건강보험심사평가원 평가결과 1등급</p>
+							<p>건강보험심사평가원<br>평가결과 1등급</p>
 						</div>
 
 						<div>
-							<span class="icon fa-camera"></span>
+							<span class="icon fa-heartbeat"></span>
 							<h3>응급 의료 센터</h3>
 							<p>24시간 접수 및 진료 가능</p>
 						</div>
 
 						<div>
-							<i class="fas fa-x-ray"></i>
+              <span class="icon fa-list-alt"></span>
 							<h3>건강 검진 센터</h3>
-							<p>세분화된 프로그램으로 정확한 검진</p>
+							<p>세분화된 프로그램으로<br>정확한 검진</p>
 						</div>
 
 					</div>
@@ -62,30 +66,43 @@
 			<section id="three" class="wrapper align-center">
 				<div class="inner">
 					<div class="flex flex-2">
-						<article>
+                        <article>
 							<div class="image round">
-								<img src="images/pic01.jpg" alt="Pic 01" />
+								<img src="images/chart.jpg" width="150px" height="150px" alt="chart" />
 							</div>
 							<header>
-								<h3>Lorem ipsum<br /> dolor amet nullam</h3>
+								<h3>Medical Record</h3>
 							</header>
-							<p>Morbi in sem quis dui placerat ornare. Pellentesquenisi<br />euismod in, pharetra a, ultricies in diam sed arcu. Cras<br />consequat  egestas augue vulputate.</p>
+							<p>차트를 조회하거나 기록합니다</p>
 							<footer>
-								<a href="#" class="button">Learn More</a>
+								<a href="chartsearching.html" class="button">GO</a>
 							</footer>
 						</article>
 						<article>
 							<div class="image round">
-								<img src="images/pic02.jpg" alt="Pic 02" />
+								<img src="images/calendar.jpg" width="150px" height="150px" alt="calendar" />
 							</div>
 							<header>
-								<h3>Sed feugiat<br /> tempus adipicsing</h3>
+								<h3>Appointments</h3>
 							</header>
-							<p>Pellentesque fermentum dolor. Aliquam quam lectus<br />facilisis auctor, ultrices ut, elementum vulputate, nunc<br /> blandit ellenste egestagus commodo.</p>
+							<p>다음 예약 또는 입원 일정을 등록합니다</p>
 							<footer>
-								<a href="#" class="button">Learn More</a>
+								<a href="calendar.html" class="button">GO</a>
 							</footer>
 						</article>
+<!--                        <article>
+							<div class="image round">
+								<img src="images/dayoff.jpg" width="150px" height="150px" alt="dayoff" />
+							</div>
+							<header>
+								<h3>Day-Off</h3>
+							</header>
+							<p>의료진의 휴무일을 확인합니다</p>
+							<footer>
+								<a href="#" class="button">GO</a>
+							</footer>
+						</article>
+-->
 					</div>
 				</div>
 			</section>
@@ -116,7 +133,7 @@
 					</form>
 
 					<div class="copyright">
-						&copy; Untitled. Design: <a href="https://templated.co">TEMPLATED</a>. Images: <a href="https://unsplash.com">Unsplash</a>.
+						&copy; DBHospital. Design: <a href="https://templated.co">DBTEAM2</a>. Images: <a href="https://unsplash.com">GettyImagesBank, PixHere</a>.
 					</div>
 
 				</div>

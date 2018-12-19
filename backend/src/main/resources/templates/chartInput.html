@@ -1,0 +1,94 @@
+<!DOCTYPE HTML>
+<!--
+	Projection by TEMPLATED
+	templated.co @templatedco
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>DB종합병원</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="assets/css/main.css" />
+
+</head>
+<body class="subpage">
+
+	<!-- Header -->
+	<header id="header">
+		<div class="inner">
+			<a href="index.html" class="logo"><strong>DB종합병원</strong></a>
+			<nav id="nav">
+				<a href="/logout">Log out</a> <a href="chartsearching.html">차트조회</a>
+				<a href="calendar.html">예약확인</a>
+			</nav>
+			<a href="#navPanel" class="navPanelToggle"><span
+				class="fa fa-bars"></span></a>
+		</div>
+	</header>
+
+	<section id="three" class="wrapper">
+		<div class="inner">
+			<header class="align-center">
+				<h2>
+					<Strong>차트작성<Strong>
+				</h2>
+				<p>
+					<span th:text="${patient.name}"></span> 환자의 차트를 작성합니다.<br>
+					DB종합병원은 환자의 건강을 최우선으로 생각합니다
+				</p>
+			</header>
+
+			<!-- input form -->
+			<!-- https://bootsnipp.com/snippets/featured/compact-contact-form -->
+			<div class="container" id="chartform">
+				<form class="well span8" th:action="@{/chartInput.do}" th:object="${new_chart}" method="post">
+					<div class="row">
+						<div class="span3">
+							<label>차트번호</label> <input class="span3" placeholder="s_yymmddxxx" 
+								th:field="*{chart_id}" type="text"><br>
+							<label>환자명</label> <input class="span3" th:placeholder="${patient.name}"
+								th:field="*{pat_name}" type="text"><br>
+							<label>담당의사</label> <input class="span3" placeholder="담당의 이름"
+								th:field="*{doc_name}" type="text"><br>
+							
+
+						</div>
+						<div class="span4">
+							<label>환자 생년월일</label> <input class="span4" th:placeholder="${patient.jumin}" 
+								th:field="*{pat_jumin}" type="text"><br>
+							<label>의사 진료과목</label> <input class="span4" placeholder="담당의 진료과목 (소아과/ 정신과/ 내과 등)" 
+								th:field="*{major_treat}" type="text"><br>
+							<label>담당간호사</label> <input class="span3" placeholder="담당간호사 이름" 
+								th:field="*{nur_name}" type="text"><br>
+							<div class="align-center">
+								<br> <input type="submit" class="button" value="입력">
+							</div>
+
+						</div>
+
+						<div class="span5">
+							<label>병명</label> <input class="span4" placeholder="진단한 병명"
+								th:field="*{treat_contents}" type="text"><br> 
+							<label>처방</label> <input class="span4" placeholder="처방 내역"
+								th:field="*{chart_contents}" type="text"><br>
+						</div>
+
+					</div>
+
+				</form>
+			</div>
+		</div>
+	</section>
+
+	<!-- Scripts -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/skel.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
+	<script src="assets/js/chartList.js"></script>
+	<script src="assets/js/popup.js"></script>
+
+
+</body>
+</html>

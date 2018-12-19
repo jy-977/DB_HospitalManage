@@ -44,6 +44,7 @@
       // TODO: Decide when query actually changed
       if (this._queryChanged()) {
         this.$search.trigger('query:changed', {
+
           query: query,
           previousQuery: previousQuery
         });

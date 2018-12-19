@@ -64,7 +64,7 @@ public class DoctorsTableCTRL implements TableCTRL{
 		
 		String sql = "create table doctors " +
 					"( " +
-					"doc_id number, " +
+					"id number, " +
 					"major_treat varchar2(25) not null, " +
 					"doc_name varchar2(20) not null, " +
 					"doc_gen char not null, " +
