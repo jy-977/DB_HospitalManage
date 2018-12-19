@@ -1,21 +1,107 @@
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<link rel="stylesheet" href="assets/css/calendar.css">
-<script src="assets/js/calendar.js"></script>
+
 <!------ Include the above in your HEAD tag ---------->
 
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
+<title>DB종합병원</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<style>
 
 
+	#wrap {
+		width: 1100px;
+		margin: 0 auto;
+	}
 
-<link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
+	#external-events {
+		float: left;
+		width: 150px;
+		padding: 0 10px;
+		text-align: left;
+	}
 
-<script>
+	#external-events h4 {
+		font-size: 16px;
+		margin-top: 0;
+		padding-top: 1em;
+	}
 
+	.external-event { /* try to mimick the look of a real event */
+		margin: 10px 0;
+		padding: 2px 4px;
+		background: #3366CC;
+		color: #fff;
+		font-size: .85em;
+		cursor: pointer;
+	}
+
+	#external-events p {
+		margin: 1.5em 0;
+		font-size: 11px;
+		color: #666;
+	}
+
+	#external-events p input {
+		margin: 0;
+		vertical-align: middle;
+	}
+
+	#calendar {
+		/* 		float: right; */
+		margin: 40px 180px;
+		width: 900px;
+		/* background-color: #FFFFFF; */
+		border-radius: 6px;
+		box-shadow: 0 1px 2px #C3C3C3;
+		-webkit-box-shadow: 0px 0px 21px 2px rgba(0, 0, 0, 0.18);
+		-moz-box-shadow: 0px 0px 21px 2px rgba(0, 0, 0, 0.18);
+		box-shadow: 0px 0px 21px 2px rgba(0, 0, 0, 0.18);
+	}
+</style>
+
+<link
+	href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i"
+	rel="stylesheet">
+
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+	integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+	crossorigin="anonymous">
+<link rel="stylesheet" href="assets/css/calendar.css">
+<link rel="stylesheet" href="assets/css/main.css">
+</head>
+
+
+<body class=subpage>
+
+	<!-- Header -->
+		<header id="header">
+			<div class="inner">
+				<a href="index.html" class="logo"><strong>DB종합병원</strong></a>
+				<nav id="nav">
+					<a href="index.html">Log In</a>
+					<a href="chartsearching.html">차트조회</a>
+					<a href="calendar.html">예약확인</a>
+				</nav>
+				<a href="#navPanel" class="navPanelToggle"><span class="fa fa-bars"></span></a>
+			</div>
+		</header>
+	<div id='calendar'></div>
+
+	<div id='wrap'>
+
+
+		<script
+			src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+			integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+			crossorigin="anonymous"></script>
+		<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+		<script
+			src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+		<script src="assets/js/calendar.js"></script>
+		<script th:inline="javascript">
 	$(document).ready(function() {
 	    var date = new Date();
 		var d = date.getDate();
@@ -123,41 +209,45 @@
 
 			events: [
 				{
-					title: 'All Day Event',
+					//id: 50101
+					title: '차태현 휴가',
 					start: new Date(y, m, 1)
 				},
 				{
-					id: 999,
-					title: 'Repeating Event',
+					//id: 50900,
+					title: '김연아 휴가',
 					start: new Date(y, m, d-3, 16, 0),
-					allDay: false,
+					//allDay: false,
 					className: 'info'
 				},
 				{
-					id: 999,
-					title: 'Repeating Event',
+					//id: 70576,
+					title: '홍길동 휴가',
 					start: new Date(y, m, d+4, 16, 0),
-					allDay: false,
+					//allDay: false,
 					className: 'info'
 				},
 				{
-					title: 'Meeting',
+					//id: 91001
+					title: '박명수 휴가',
 					start: new Date(y, m, d, 10, 30),
-					allDay: false,
+					//allDay: false,
 					className: 'important'
 				},
 				{
-					title: 'Lunch',
+					//id: 980312
+					title: '이태정 휴가',
 					start: new Date(y, m, d, 12, 0),
 					end: new Date(y, m, d, 14, 0),
-					allDay: false,
+					//allDay: false,
 					className: 'important'
 				},
+				/*
 				{
 					title: 'Birthday Party',
 					start: new Date(y, m, d+1, 19, 0),
 					end: new Date(y, m, d+1, 22, 30),
-					allDay: false,
+					//allDay: false,
 				},
 				{
 					title: 'Click for Google',
@@ -166,6 +256,7 @@
 					url: 'https://ccp.cloudaccess.net/aff.php?aff=5188',
 					className: 'success'
 				}
+				*/
 			],
 		});
 
@@ -173,75 +264,7 @@
 	});
 
 </script>
-<style>
-
-	body {
-	    margin-bottom: 40px;
-		margin-top: 40px;
-		text-align: center;
-		font-size: 14px;
-		font-family: 'Roboto', sans-serif;
-		background:url(http://www.digiphotohub.com/wp-content/uploads/2015/09/bigstock-Abstract-Blurred-Background-Of-92820527.jpg);
-		}
-
-	#wrap {
-		width: 1100px;
-		margin: 0 auto;
-		}
-
-	#external-events {
-		float: left;
-		width: 150px;
-		padding: 0 10px;
-		text-align: left;
-		}
-
-	#external-events h4 {
-		font-size: 16px;
-		margin-top: 0;
-		padding-top: 1em;
-		}
-
-	.external-event { /* try to mimick the look of a real event */
-		margin: 10px 0;
-		padding: 2px 4px;
-		background: #3366CC;
-		color: #fff;
-		font-size: .85em;
-		cursor: pointer;
-		}
-
-	#external-events p {
-		margin: 1.5em 0;
-		font-size: 11px;
-		color: #666;
-		}
-
-	#external-events p input {
-		margin: 0;
-		vertical-align: middle;
-		}
-
-	#calendar {
-/* 		float: right; */
-        margin: 0 auto;
-		width: 900px;
-		background-color: #FFFFFF;
-		  border-radius: 6px;
-        box-shadow: 0 1px 2px #C3C3C3;
-		-webkit-box-shadow: 0px 0px 21px 2px rgba(0,0,0,0.18);
--moz-box-shadow: 0px 0px 21px 2px rgba(0,0,0,0.18);
-box-shadow: 0px 0px 21px 2px rgba(0,0,0,0.18);
-		}
-
-</style>
-</head>
-<body>
-<div id='wrap'>
-
-<div id='calendar'></div>
-
-<div style='clear:both'></div>
-</div>
+		<div style='clear: both'></div>
+	</div>
 </body>
 </html>

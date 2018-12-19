@@ -48,7 +48,10 @@
 							 <li class="list-item" data-search-on-list="list-item" th:each="patient : ${patients}">
 									<a href="chartInput.html" class="list-item-link" th:text="${patient.pat_name}">진료날짜  <span class="item-list-subtext" th:text="${patient.pat_id}">진료과목(소아과)  </span><span class="item-list-subtext" th:text="${patient.pat_id}">담당의 이름</span></a>
 							</li>
-
+								<li class="list-item" data-search-on-list="list-item" th:each="chart : ${charts}">
+									<a href="chartInput.html" class="list-item-link">진료날짜 <span class="item-list-subtext">진료과목(내과)    </span>  <span class="item-list-subtext">담당의 이름</span>
+									</a>
+								</li>
 							</ul>
 
 						</div>
@@ -56,6 +59,7 @@
 				</div>
 			</section>
 
+			<ul class="list" data-search-on-list="list">
 
 
 		<!-- Scripts -->
